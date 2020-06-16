@@ -35,21 +35,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.myToolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        //FloatingActionButton fab = findViewById(R.id.fab);
         ListView listView = findViewById(R.id.listView);
         setSupportActionBar(toolbar);
 
         fillImages();
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                generateRandomItemData();
-            }
-        });
-
         adapter = new ItemsDataAdapter(this,null);
         listView.setAdapter(adapter);
+
+        generateRandomItemData();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,8 +76,45 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new ItemData(
                 images.get(random.nextInt(images.size())),
                 "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
-                "It\'s me",
+                "Записная книжка",
                 random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Подсписка",
+                random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Фотогалерея",
+                random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHelloHelloHelHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Мониторинг здоровья",
+                random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Оплата",
+                random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Ввод адреса",
+                random.nextBoolean()));
+
+        adapter.addItem(new ItemData(
+                images.get(random.nextInt(images.size())),
+                "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello" + adapter.getCount(),
+                "Календарь",
+                random.nextBoolean()));
+
     }
 
     private void fillImages() {
