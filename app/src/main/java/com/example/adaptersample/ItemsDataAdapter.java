@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +20,16 @@ public class ItemsDataAdapter extends BaseAdapter {
     private List<ItemData> items;
     private LayoutInflater inflater;
 
-    private CompoundButton.OnCheckedChangeListener myCheckChangeList
-            = new CompoundButton.OnCheckedChangeListener() {
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            items.get((Integer) buttonView.getTag()).setChecked(isChecked);
+    private CompoundButton.OnClickListener myOnClick
+            = new CompoundButton.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
         }
+
+//        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//            items.get((Integer) buttonView.getTag()).setChecked(isChecked);
+//        }
     };
 
     ItemsDataAdapter(Context context, List<ItemData> items) {
@@ -64,7 +71,7 @@ public class ItemsDataAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (view == null) {
             view = inflater.inflate(R.layout.item_list_view, parent, false);
@@ -75,14 +82,18 @@ public class ItemsDataAdapter extends BaseAdapter {
         ImageView image = view.findViewById(R.id.icon);
         TextView title = view.findViewById(R.id.title);
         TextView subtitle = view.findViewById(R.id.subtitle);
-        CheckBox checkBox = view.findViewById(R.id.checkbox);
 
         image.setImageDrawable(itemData.getImage());
         title.setText(itemData.getTitle());
         subtitle.setText(itemData.getSubtitle());
-        checkBox.setOnCheckedChangeListener(myCheckChangeList);
-        checkBox.setTag(position);
-        checkBox.setChecked(itemData.isChecked());
+        Button delBtn = view.findViewById(R.id.delBtn);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               removeItem(position);
+            }
+        });
+
 
         return view;
     }

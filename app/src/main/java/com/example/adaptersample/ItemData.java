@@ -13,7 +13,7 @@ public class ItemData {
         this.image = image;
         this.title = title;
         this.subtitle = subtitle;
-        this.checked = checked;
+        //this.checked = checked;
     }
 
     public Drawable getImage() {

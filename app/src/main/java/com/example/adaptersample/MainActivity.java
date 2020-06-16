@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Random random = new Random();
     private ItemsDataAdapter adapter;
     private List<Drawable> images = new ArrayList<>();
+    private Button delBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.myToolbar);
-        //FloatingActionButton fab = findViewById(R.id.fab);
         ListView listView = findViewById(R.id.listView);
+        delBtn = findViewById(R.id.delBtn);
         setSupportActionBar(toolbar);
 
         fillImages();
@@ -46,17 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         generateRandomItemData();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                showItemData(i);
-            }
-        });
-
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                adapter.removeItem(i);
+                showItemData(i);
                 return true;
             }
         });
@@ -66,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private void showItemData(int position) {
         ItemData itemData = adapter.getItem(position);
         Toast.makeText(MainActivity.this,
-                "Title: " + itemData.getTitle() + "\n" +
-                        "Subtitle: " + itemData.getSubtitle() + "\n" +
-                        "Checked: " + itemData.isChecked(),
+                        "Subtitle: " + itemData.getSubtitle() + "\n",
                 Toast.LENGTH_SHORT).show();
     }
 

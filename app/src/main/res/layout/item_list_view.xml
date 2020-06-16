@@ -40,11 +40,13 @@
 
     </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="75dp"
+        android:layout_height="37dp"
         android:layout_gravity="center_vertical"
-        android:layout_weight="0"/>
+        android:layout_weight="0"
+        android:background="@android:color/holo_red_light"
+        android:text="Del" />
 
 </LinearLayout>
