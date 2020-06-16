@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_open_notes"
+        android:title="Записная книжка"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_subscription"
+        android:title="Подсписка"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_foto"
+        android:title="Фотогалерея"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_health"
+        android:title="Мониторинг здоровья"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_payment"
+        android:title="Оплата"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_spinner"
+        android:title="Ввод адреса"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_calendarview"
+        android:title="Календарь"
+        app:showAsAction="never" />
+
+</menu>

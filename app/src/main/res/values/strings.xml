@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">AdapterSample</string>
+    <string name="inputNote">Введите текст</string>
+    <string name="save">Сохранить</string>
+    <string name="login">Имя пользователя</string>
+    <string name="email">Электронная почта</string>
+    <string name="clean">Очистить</string>
+    <string name="buttonTextBack">Назад</string>
+    <string name="buttonTextNext">Вперед</string>
+    <string name="name_app">Комплексная система мониторинга здоровья Malyukova E.</string>
+    <string name="name">ФИО</string>
+    <string name="ageName">Возраст</string>
+    <string name="saveName">Сохранить</string>
+    <string name="lower">Нижнее давление</string>
+    <string name="upper">Верхнее давление</string>
+    <string name="tachicardia">Тахикардия</string>
+    <string name="pulse">Пульс</string>
+    <string name="incorrect">Введены неправильные данные</string>
+    <string name="saved">Сохранено</string>
+    <string name="weight">Вес</string>
+    <string name="steps">Количество шагов</string>
+    <string name="inputMoney">Ввод денег</string>
+    <string name="inputInfo">Информация об оплате</string>
+    <string name="cashAddressChkBx">Наличными по адресу</string>
+    <string name="mobilePhoneChkBx">С мобильного телефона</string>
+    <string name="bankCardChkBx">С банковской карты</string>
+    <string name="message">Оплата произведена</string>
+    <string name="showAddress">Показать адрес</string>
+    <string-array name="countries">
+        <item>Россия</item>
+        <item>Украина</item>
+        <item>Белоруссия</item>
+    </string-array>
+    <string-array name="r_cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Казань</item>
+    </string-array>
+    <string-array name="u_cities">
+        <item>Киев</item>
+        <item>Одесса</item>
+        <item>Харьков</item>
+    </string-array>
+    <string-array name="b_cities">
+        <item>Минск</item>
+        <item>Гомель</item>
+        <item>Торжок</item>
+    </string-array>
+    <string name="chooseStartDate">Дата-время старта задачи</string>
+    <string name="chooseEndDate">Дата-время окончания задачи:</string>
+</resources>
